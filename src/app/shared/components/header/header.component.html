@@ -5,16 +5,31 @@
       <img src="https://cdn.prod.website-files.com/66da0a4d2fcd7787f1256377/66e1e7a0c3f949b974219e40_Open%20Heart.svg"
         loading="lazy" width="Auto" alt="Company Logo" class="nav-logo-image" />
     </a>
-    <div class="nav-menu-button w-nav-button">
-      <div class="navha-hamburger-button w-hidden-main">
+    <div class="nav-menu-button w-nav-button" aria-controls="w-nav-overlay-0" aria-haspopup="menu"
+      [class.w--open]="expanded" [attr.aria-expanded]="expanded">
+      <div class="navha-hamburger-button w-hidden-main" (click)="expand()">
         <img
           src="https://cdn.prod.website-files.com/66da0a4d2fcd7787f1256377/66da0a4d2fcd7787f12563b4_Hamburger%20icon.svg"
-          loading="lazy" alt="" class="nav-hamburger-icon" />
+          loading="lazy" alt="" class="nav-hamburger-icon" [style]="expanded ? 'opacity: 0;':'opacity: 1;'" />
         <img src="https://cdn.prod.website-files.com/66da0a4d2fcd7787f1256377/66da0a4d2fcd7787f12563b5_close.svg"
-          loading="lazy" alt="" class="nav-close-icon" />
+          loading="lazy" alt="" class="nav-close-icon" [style]="!expanded ? 'opacity: 0;':'opacity: 1;'"/>
       </div>
     </div>
     <nav role="navigation" class="nav-links-conatiner w-nav-menu">
+      <div class="nav-inner-container">
+        <a href="/heart-analysis/predict" class="nav-link">Análise Cardíaca</a>
+        <a href="/heart-analysis/results" class="nav-link">Resultados</a>
+      </div>
+      <div class="nav-cta-button-conatiner">
+        <button class="primary-button primary-button-slim w-button">Acurácia atual:
+          {{accuracyService.currentAccuracy}}</button>
+      </div>
+    </nav>
+  </div>
+  <div class="w-nav-overlay" [style]="expanded ? 'height: 7121.62px; display: block;': 'display: none;'"
+    id="w-nav-overlay-0">
+    <nav role="navigation" class="nav-links-conatiner w-nav-menu"
+      style="transition: all, transform 300ms; transform: translateY(0px) translateX(0px);" data-nav-menu-open>
       <div class="nav-inner-container">
         <a href="/heart-analysis/predict" class="nav-link">Análise Cardíaca</a>
         <a href="/heart-analysis/results" class="nav-link">Resultados</a>
