@@ -1,0 +1,142 @@
+<app-header></app-header>
+<section id="Contact" class="contact-hero-section">
+  <div class="w-layout-blockcontainer container w-container">
+    <h1 class="heading-h2 margin-bottom-32">Análise Cardíaca</h1>
+    <div class="contact-form-block w-form">
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form-grid">
+        <div class="contact-side-container">
+          <p words-slide-up="" text-split="" class="paragraph-20">Este sistema é destinado exclusivamente a
+            profissionais da saúde como ferramenta de apoio para análises preliminares relacionadas à saúde cardíaca. Os
+            resultados fornecidos têm caráter informativo e não substituem o julgamento clínico. Apenas médicos ou
+            profissionais habilitados podem emitir diagnósticos ou laudos conclusivos. Utilize esta ferramenta como
+            complemento à avaliação profissional, garantindo uma abordagem ética e individualizada para cada paciente.
+          </p>
+        </div>
+        <div class="form-elements-grid">
+          <div id="w-node-_334a11bf-5dee-5a60-2e94-5e9068038dfd-f125638d" class="_100-width">
+            <label for="Last-Name" class="field-label">Identificador do paciente*</label>
+            <input class="text-field w-input" formControlName="patientID" type="text" required />
+          </div>
+          <div id="w-node-_334a11bf-5dee-5a60-2e94-5e9068038ded-f125638d" class="_100-width">
+            <label for="First-Name" class="field-label">Idade*</label>
+            <input class="text-field w-input" maxlength="256" formControlName="age" type="number" required />
+          </div>
+          <div id="w-node-_334a11bf-5dee-5a60-2e94-5e9068038df1-f125638d" class="_100-width">
+            <label for="Last-Name" class="field-label">Pressão sanguínea em repouso (mmHg)*</label>
+            <input class="text-field w-input" formControlName="restingBp" type="number" required />
+          </div>
+          <div id="w-node-_334a11bf-5dee-5a60-2e94-5e9068038df1-f125638d" class="_100-width">
+            <label for="Select-Topic" class="field-label">Sexo*</label>
+            <select formControlName="sex" required class="text-field w-select">
+              <option selected disabled>Selecione um sexo</option>
+              <ng-container *ngFor="let sexOption of sexOptions">
+                <option value="{{sexOption.id}}">{{sexOption.name}}</option>
+              </ng-container>
+            </select>
+          </div>
+          <div id="w-node-_334a11bf-5dee-5a60-2e94-5e9068038df1-f125638d" class="_100-width">
+            <label for="Select-Topic" class="field-label">Tipo de dor no peito*</label>
+            <select formControlName="chestPainType" required class="text-field w-select">
+              <option selected disabled>Selecione um tipo de dor</option>
+              <ng-container *ngFor="let chestPainType of chestPainTypes">
+                <option value="{{chestPainType.id}}">{{chestPainType.name}}</option>
+              </ng-container>
+            </select>
+          </div>
+          <div id="w-node-_334a11bf-5dee-5a60-2e94-5e9068038df1-f125638d" class="_100-width">
+            <label for="Last-Name" class="field-label">Colesterol sérico (mg/dl)*</label>
+            <input class="text-field w-input" formControlName="chol" type="number" required />
+          </div>
+          <div id="w-node-_334a11bf-5dee-5a60-2e94-5e9068038df1-f125638d" class="_100-width">
+            <label for="Last-Name" class="field-label">Frequência cardíaca máxima*</label>
+            <input class="text-field w-input" formControlName="maxHr" type="number" required />
+          </div>
+          <div id="w-node-_334a11bf-5dee-5a60-2e94-5e9068038df1-f125638d" class="_100-width">
+            <label for="Last-Name" class="field-label">Açúcar no sangue em jejum (mg/dl)*</label>
+            <input class="text-field w-input" formControlName="fastingBp" type="number" required />
+          </div>
+          <div id="w-node-_334a11bf-5dee-5a60-2e94-5e9068038df1-f125638d" class="_100-width">
+            <label for="Select-Topic" class="field-label">Eletrocardiograma em repouso*</label>
+            <select formControlName="restingEcg" required class="text-field w-select">
+              <option selected disabled>Selecione um diagnóstico</option>
+              <ng-container *ngFor="let restingECG of restingEcgTypes">
+                <option value="{{restingECG.id}}">{{restingECG.name}}</option>
+              </ng-container>
+            </select>
+          </div>
+          <div id="w-node-_334a11bf-5dee-5a60-2e94-5e9068038df1-f125638d" class="_100-width">
+            <label for="Select-Topic" class="field-label">Angina induzida por exercício*</label>
+            <select formControlName="exerciseAngina" required class="text-field w-select">
+              <option selected disabled>Selecione o resultado</option>
+              <ng-container *ngFor="let exerciseAngina of exerciseAnginaOptions">
+                <option value="{{exerciseAngina.id}}">{{exerciseAngina.name}}</option>
+              </ng-container>
+            </select>
+          </div>
+          <div id="w-node-_334a11bf-5dee-5a60-2e94-5e9068038df1-f125638d" class="_100-width">
+            <label for="Select-Topic" class="field-label">Inclinação do segmento ST*</label>
+            <select formControlName="stSlope" required class="text-field w-select">
+              <option selected disabled>Selecione a inclinação</option>
+              <ng-container *ngFor="let stSlope of stSlopeOptions">
+                <option value="{{stSlope.id}}">{{stSlope.name}}</option>
+              </ng-container>
+            </select>
+          </div>
+          <div id="w-node-_334a11bf-5dee-5a60-2e94-5e9068038dfd-f125638d" class="_100-width">
+            <label for="Last-Name" class="field-label">Depressão de ST induzida por exercício em relação ao
+              repouso*</label>
+            <input class="text-field w-input" formControlName="oldPeak" type="number" required />
+          </div>
+          <div class="_100-width">
+            <button type="submit" [disabled]="contactForm.invalid" class="primary-button w-button">Enviar para
+              análise</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<section id="Open-positions" class="section">
+  <div class="w-layout-blockcontainer container w-container" *ngIf="result">
+    <div class="jobs-grid">
+      <div id="w-node-_06458f1a-1946-b39b-2de7-b6ff7af7e829-f1256394" class="jobs-text-container">
+        <h2 class="heading-h2">Resultado</h2>
+      </div>
+      <div id="w-node-a352d349-82af-b140-2e62-e15ea213060d-f1256394" class="jobs-container">
+        <div class="careers-item w-inline-block">
+          <div class="careers-title-container">
+            <div class="careers-titile-wrapper">
+              <p class="heading-h4">{{contactForm.get('patientID')?.value}}</p>
+              <div class="careers-pill" [class.marketing]="result.tendency" [class.sales]="!result.tendency">
+                <div class="badge-dot w-embed" [class.orange]="result.tendency" [class.green]="!result.tendency">
+                  <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="3" cy="3" r="3" fill="CurrentColor" />
+                  </svg>
+                </div>
+                <div>{{result.tendency > 0 ? 'Tendência a ter problemas cardíacos' : 'Sem tendência a ter problemas
+                  cardíacos'}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="careers-job-details-wrapper">
+            <div class="careers-details-wrapper">
+              <div class="careers-details-icon">
+                <div class="careers-icon w-embed">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M10.0002 10.4166C11.3809 10.4166 12.5002 9.29734 12.5002 7.91663C12.5002 6.53591 11.3809 5.41663 10.0002 5.41663C8.61945 5.41663 7.50016 6.53591 7.50016 7.91663C7.50016 9.29734 8.61945 10.4166 10.0002 10.4166Z"
+                      stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M10.0002 18.3333C11.6668 15 16.6668 12.8485 16.6668 8.33329C16.6668 4.65139 13.6821 1.66663 10.0002 1.66663C6.31826 1.66663 3.3335 4.65139 3.3335 8.33329C3.3335 12.8485 8.3335 15 10.0002 18.3333Z"
+                      stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+              </div>
+              <div class="paragraph-16">Acurácia: {{result.currentAccuracy}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

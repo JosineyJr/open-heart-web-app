@@ -1,0 +1,58 @@
+<app-header></app-header>
+<section id="Open-positions" class="section">
+  <div class="w-layout-blockcontainer container w-container">
+    <div class="jobs-grid">
+      <div id="w-node-_06458f1a-1946-b39b-2de7-b6ff7af7e829-f1256394" class="jobs-text-container">
+        <h2 class="heading-h2">Resultados</h2>
+      </div>
+      <div id="w-node-a352d349-82af-b140-2e62-e15ea213060d-f1256394" class="jobs-container">
+        <ng-container *ngFor="let result of results">
+          <div class="careers-item w-inline-block" [class.retrained]="result.retrain">
+            <div class="careers-title-container">
+              <div class="careers-titile-wrapper">
+                <p class="heading-h4">{{result.patientID}}</p>
+                <div class="careers-pill" [class.marketing]="result.tendency" [class.sales]="!result.tendency">
+                  <div class="badge-dot w-embed" [class.orange]="result.tendency" [class.green]="!result.tendency">
+                    <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="3" cy="3" r="3" fill="CurrentColor" />
+                    </svg>
+                  </div>
+                  <div>{{result.tendency ?
+                    "Tendência a ter problemas cardíacos" : "Sem tendência a ter problemas cardíacos"}}</div>
+                </div>
+              </div>
+            </div>
+            <div class="careers-job-details-wrapper">
+              <div class="careers-details-wrapper">
+                <div class="careers-details-icon">
+                  <div class="careers-icon w-embed">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M10.0002 10.4166C11.3809 10.4166 12.5002 9.29734 12.5002 7.91663C12.5002 6.53591 11.3809 5.41663 10.0002 5.41663C8.61945 5.41663 7.50016 6.53591 7.50016 7.91663C7.50016 9.29734 8.61945 10.4166 10.0002 10.4166Z"
+                        stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M10.0002 18.3333C11.6668 15 16.6668 12.8485 16.6668 8.33329C16.6668 4.65139 13.6821 1.66663 10.0002 1.66663C6.31826 1.66663 3.3335 4.65139 3.3335 8.33329C3.3335 12.8485 8.3335 15 10.0002 18.3333Z"
+                        stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="paragraph-16">Acurácia: {{result.currentAccuracy}}</div>
+
+              </div>
+              <div class="careers-details-wrapper">
+                <button class="primary-button primary-button-slim w-button" [disabled]="result.retrain"
+                  (click)="retrainService.retrain(result, true)" (click)="updateResult(result, true)">
+                  Confirmar análise</button>
+              </div>
+              <div class="careers-details-wrapper">
+                <button class="secondary-button primary-button-slim w-button" [disabled]="result.retrain"
+                  (click)="retrainService.retrain(result, false)" (click)="updateResult(result,false)">Recusar análise
+                </button>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</section>
