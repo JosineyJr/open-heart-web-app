@@ -19,11 +19,11 @@
           </div>
           <div id="w-node-_334a11bf-5dee-5a60-2e94-5e9068038ded-f125638d" class="_100-width">
             <label for="First-Name" class="field-label">Idade*</label>
-            <input class="text-field w-input" maxlength="256" formControlName="age" type="number" required />
+            <input class="text-field w-input" maxlength="256" formControlName="age" type="number" required min="0" />
           </div>
           <div id="w-node-_334a11bf-5dee-5a60-2e94-5e9068038df1-f125638d" class="_100-width">
             <label for="Last-Name" class="field-label">Pressão sanguínea em repouso (mmHg)*</label>
-            <input class="text-field w-input" formControlName="restingBp" type="number" required />
+            <input class="text-field w-input" formControlName="restingBp" type="number" required min="0" />
           </div>
           <div id="w-node-_334a11bf-5dee-5a60-2e94-5e9068038df1-f125638d" class="_100-width">
             <label for="Select-Topic" class="field-label">Sexo*</label>
@@ -45,7 +45,7 @@
           </div>
           <div id="w-node-_334a11bf-5dee-5a60-2e94-5e9068038df1-f125638d" class="_100-width">
             <label for="Last-Name" class="field-label">Colesterol sérico (mg/dl)*</label>
-            <input class="text-field w-input" formControlName="chol" type="number" required />
+            <input class="text-field w-input" formControlName="chol" type="number" required min="0" />
           </div>
           <div id="w-node-_334a11bf-5dee-5a60-2e94-5e9068038df1-f125638d" class="_100-width">
             <label for="Last-Name" class="field-label">Frequência cardíaca máxima*</label>
@@ -53,7 +53,7 @@
           </div>
           <div id="w-node-_334a11bf-5dee-5a60-2e94-5e9068038df1-f125638d" class="_100-width">
             <label for="Last-Name" class="field-label">Açúcar no sangue em jejum (mg/dl)*</label>
-            <input class="text-field w-input" formControlName="fastingBp" type="number" required />
+            <input class="text-field w-input" formControlName="fastingBp" type="number" required min="0" />
           </div>
           <div id="w-node-_334a11bf-5dee-5a60-2e94-5e9068038df1-f125638d" class="_100-width">
             <label for="Select-Topic" class="field-label">Eletrocardiograma em repouso*</label>
@@ -85,7 +85,7 @@
           <div id="w-node-_334a11bf-5dee-5a60-2e94-5e9068038dfd-f125638d" class="_100-width">
             <label for="Last-Name" class="field-label">Depressão de ST induzida por exercício em relação ao
               repouso*</label>
-            <input class="text-field w-input" formControlName="oldPeak" type="number" required />
+            <input class="text-field w-input" formControlName="oldPeak" type="number" required min="0" />
           </div>
           <div class="_100-width">
             <button type="submit" [disabled]="contactForm.invalid" class="primary-button w-button">Enviar para
